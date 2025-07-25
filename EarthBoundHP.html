@@ -1,0 +1,307 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>EarthBound Clothing</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Segoe UI', sans-serif;
+      background-color: #f4f2ec;
+      color: #333;
+    }
+
+    header {
+      background-color: #3e3d36;
+      color: #e8e4d9;
+      padding: 20px 40px;
+      text-align: center;
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+    }
+
+    .brand {
+      font-size: 2.5rem;
+      font-weight: 700;
+      letter-spacing: 2px;
+      margin-bottom: 10px;
+      font-family: 'Georgia', serif;
+    }
+
+    nav ul {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+      display: flex;
+      justify-content: center;
+      gap: 30px;
+    }
+
+    nav a {
+      text-decoration: none;
+      color: #e8e4d9;
+      font-size: 1.1rem;
+      font-weight: 500;
+      transition: color 0.3s ease;
+    }
+
+    nav a:hover {
+      color: #d1b172;
+    }
+
+    .slogan-section {
+      background-color: #d9ccb2;
+      padding: 80px 20px 60px;
+      text-align: center;
+    }
+
+    .slogan {
+      font-size: 1.8rem;
+      font-weight: 500;
+      opacity: 0;
+      transform: translateY(30px);
+      animation: fadeUp 1.5s ease-out forwards;
+    }
+
+    @keyframes fadeUp {
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    .model-section {
+      padding: 50px 20px;
+      text-align: center;
+      background-color: #ede9dd;
+    }
+
+    .model-section h2 {
+      font-size: 2rem;
+      margin-bottom: 30px;
+      font-weight: 600;
+    }
+
+    .model-grid {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 25px;
+    }
+
+    .model {
+      width: 280px;
+    }
+
+    .model img {
+      width: 100%;
+      height: auto;
+      border-radius: 10px;
+    }
+
+    .products {
+      padding: 60px 20px;
+      text-align: center;
+    }
+
+    .products h2 {
+      font-size: 2rem;
+      margin-bottom: 40px;
+    }
+
+    .product-grid {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 30px;
+    }
+
+    .product {
+      background-color: #fff;
+      padding: 20px;
+      border-radius: 10px;
+      width: 280px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    }
+
+    .product img {
+      width: 100%;
+      height: auto;
+      border-radius: 8px;
+    }
+
+    .product h3 {
+      margin: 15px 0 10px;
+      font-size: 1.2rem;
+    }
+
+    .product p {
+      color: #6b5e53;
+    }
+
+    .brand-summary {
+      padding: 60px 20px;
+      background-color: #fffdf6;
+      text-align: center;
+    }
+
+    .brand-summary h2 {
+      font-size: 2rem;
+      margin-bottom: 20px;
+    }
+
+    .brand-summary p {
+      max-width: 800px;
+      margin: 0 auto;
+      font-size: 1.1rem;
+      line-height: 1.6;
+    }
+
+    .about {
+      padding: 60px 20px;
+      background-color: #e7e1d1;
+      text-align: center;
+    }
+
+    .about h2 {
+      font-size: 2rem;
+      margin-bottom: 20px;
+    }
+
+    .about p {
+      max-width: 700px;
+      margin: 0 auto;
+      line-height: 1.6;
+    }
+
+    footer {
+      background-color: #3e3d36;
+      color: #e8e4d9;
+      text-align: center;
+      padding: 20px;
+    }
+
+    /* Mobile Responsiveness */
+    @media (max-width: 768px) {
+      nav ul {
+        flex-direction: column;
+        gap: 15px;
+      }
+
+      header {
+        padding: 15px 20px;
+      }
+
+      .brand {
+        font-size: 1.8rem;
+      }
+
+      nav a {
+        font-size: 1rem;
+      }
+
+      .slogan {
+        font-size: 1.4rem;
+        padding: 0 10px;
+      }
+
+      .model-section h2,
+      .products h2,
+      .brand-summary h2,
+      .about h2 {
+        font-size: 1.5rem;
+      }
+
+      .product,
+      .model {
+        width: 90%;
+      }
+
+      .product-grid,
+      .model-grid {
+        gap: 15px;
+      }
+
+      .brand-summary p,
+      .about p {
+        font-size: 1rem;
+        padding: 0 10px;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <div class="brand">EarthBound</div>
+    <nav>
+      <ul>
+        <li><a href="Drops.html">Drops</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="contacts.html">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <section class="slogan-section">
+    <div class="slogan">Step Into Style</div>
+  </section>
+
+  <section class="model-section">
+    <h2>Model Showcases</h2>
+    <div class="model-grid">
+      <div class="model">
+        <img src="B17.png" alt="Model 1" />
+      </div>
+      <div class="model">
+        <img src="b1.png" alt="Model 2" />
+      </div>
+      <div class="model">
+        <img src="b3.png" alt="Model 3" />
+      </div>
+    </div>
+  </section>
+
+  <section class="products">
+    <h2>Featured Drops</h2>
+    <div class="product-grid">
+      <div class="product">
+        <img src="b9.png" alt="Model in Hoodie" />
+        <h3>Bound Caps</h3>
+        <p>R149.99</p>
+      </div>
+      <div class="product">
+        <img src="b10.png" alt="Hoodie" />
+        <h3>EarthBound Hoodie</h3>
+        <p>R349.99</p>
+      </div>
+      <div class="product">
+        <img src="b11.png" alt="Bound T-Shirt" />
+        <h3>Bound T-Shirt</h3>
+        <p>R199.99</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="brand-summary">
+    <h2>Who We Are</h2>
+    <p>
+      EarthBound blends fashion with purpose. Inspired by nature and grounded in everyday hustle, our collections are crafted for individuals who wear their journey. Designed in South Africa, EarthBound is a tribute to simplicity, culture, and raw creativity. 
+    </p>
+  </section>
+
+  <section class="about">
+    <h2>About EarthBound</h2>
+    <p>
+      EarthBound is a fashion-forward brand focused on clean design and conscious streetwear. Please note: we promote small brands and sellers on this site — if a business fails to deliver a product or service, we are not responsible for that transaction. Always verify before purchase.
+    </p>
+  </section>
+
+  <footer>
+    <p>© 2025 EarthBound. All rights reserved.</p>
+  </footer>
+
+</body>
+</html>

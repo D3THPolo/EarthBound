@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>About EarthBound</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Segoe UI', sans-serif;
+      background-color: #f5f3ef;
+      color: #2e2b26;
+    }
+
+    header {
+      background-color: #2e2b26;
+      color: #f5f3ef;
+      padding: 30px 0;
+      text-align: center;
+    }
+
+    header h1 {
+      font-size: 2.8rem;
+      letter-spacing: 2px;
+      margin: 0;
+    }
+
+    nav {
+      background-color: #3b372f;
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      padding: 12px 0;
+    }
+
+    nav a {
+      color: #e4e0d2;
+      text-decoration: none;
+      margin: 10px 15px;
+      font-size: 1.1rem;
+      font-weight: 600;
+      transition: color 0.3s ease;
+    }
+
+    nav a:hover {
+      color: #caa85e;
+    }
+
+    .about-container {
+      max-width: 1200px;
+      margin: 50px auto;
+      padding: 0 20px;
+    }
+
+    .section-title {
+      text-align: center;
+      font-size: 2rem;
+      margin-bottom: 40px;
+      position: relative;
+    }
+
+    .section-title::after {
+      content: '';
+      height: 4px;
+      width: 80px;
+      background-color: #caa85e;
+      position: absolute;
+      left: 50%;
+      bottom: -10px;
+      transform: translateX(-50%);
+      border-radius: 2px;
+    }
+
+    .about-content {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 40px;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .about-text {
+      flex: 1;
+      min-width: 280px;
+    }
+
+    .about-text h2 {
+      font-size: 1.8rem;
+      margin-bottom: 15px;
+    }
+
+    .about-text p {
+      line-height: 1.7;
+      font-size: 1.1rem;
+    }
+
+    .about-image {
+      flex: 1;
+      min-width: 300px;
+    }
+
+    .about-image img {
+      width: 100%;
+      height: auto;
+      object-fit: cover;
+      border-radius: 12px;
+      box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+    }
+
+    .gallery {
+      margin-top: 60px;
+    }
+
+    .gallery-title {
+      text-align: center;
+      font-size: 1.7rem;
+      margin-bottom: 30px;
+    }
+
+    .gallery-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 20px;
+    }
+
+    .gallery-grid img {
+      width: 100%;
+      height: 300px;
+      object-fit: cover;
+      border-radius: 10px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+      transition: transform 0.3s ease;
+    }
+
+    .gallery-grid img:hover {
+      transform: scale(1.03);
+    }
+
+    @media (max-width: 768px) {
+      header h1 {
+        font-size: 2.2rem;
+      }
+
+      .section-title {
+        font-size: 1.7rem;
+      }
+
+      .about-content {
+        flex-direction: column;
+        text-align: center;
+      }
+
+      .about-text h2 {
+        font-size: 1.5rem;
+      }
+
+      .about-text p {
+        font-size: 1rem;
+      }
+
+      .gallery-title {
+        font-size: 1.4rem;
+      }
+
+      nav a {
+        font-size: 1rem;
+        margin: 8px 10px;
+      }
+    }
+
+    @media (max-width: 480px) {
+      .gallery-grid img {
+        height: 220px;
+      }
+
+      .about-text p {
+        font-size: 0.95rem;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <h1>EarthBound</h1>
+  </header>
+
+  <nav>
+    <a href="EarthBoundHP.html">Home</a>
+    <a href="Drops.html">Drops</a>
+    <a href="contacts.html">Contact</a>
+  </nav>
+
+  <section class="about-container">
+    <h2 class="section-title">About the Brand</h2>
+    <div class="about-content">
+      <div class="about-text">
+        <h2>Rooted in Style</h2>
+        <p>
+          EarthBound is a lifestyle clothing brand grounded in nature and driven by authenticity. Born from a desire to blend modern streetwear with earthy tones and sustainable values, we bring you fashion that feels just as good as it looks.
+        </p>
+        <p>
+          Each piece in our collection tells a story — a story of freedom, earth, and expression. Our designs are minimal, functional, and made for everyone who walks their own path.
+        </p>
+      </div>
+      <div class="about-image">
+        <img src="logo1.png" alt="EarthBound Brand Photo"/>
+      </div>
+    </div>
+
+    <div class="gallery">
+      <h3 class="gallery-title">Photo Gallery</h3>
+      <div class="gallery-grid">
+        <img src="b1.png" alt="Gallery 1" />
+        <img src="b3.png" alt="Gallery 2" />
+        <img src="b14.png" alt="Gallery 3" />
+        <img src="b7.png" alt="Gallery 4" />
+      </div>
+    </div>
+  </section>
+
+</body>
+</html>
