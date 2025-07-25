@@ -2,8 +2,8 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>About EarthBound</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Contact EarthBound</title>
   <style>
     body {
       margin: 0;
@@ -20,7 +20,7 @@
     }
 
     header h1 {
-      font-size: 2.8rem;
+      font-size: 2.5rem;
       letter-spacing: 2px;
       margin: 0;
     }
@@ -36,7 +36,7 @@
     nav a {
       color: #e4e0d2;
       text-decoration: none;
-      margin: 10px 15px;
+      margin: 0 18px;
       font-size: 1.1rem;
       font-weight: 600;
       transition: color 0.3s ease;
@@ -46,20 +46,20 @@
       color: #caa85e;
     }
 
-    .about-container {
-      max-width: 1200px;
+    .contact-container {
+      max-width: 900px;
       margin: 50px auto;
       padding: 0 20px;
     }
 
-    .section-title {
+    .contact-container h2 {
       text-align: center;
-      font-size: 2rem;
-      margin-bottom: 40px;
+      font-size: 2.2rem;
+      margin-bottom: 30px;
       position: relative;
     }
 
-    .section-title::after {
+    .contact-container h2::after {
       content: '';
       height: 4px;
       width: 80px;
@@ -71,110 +71,130 @@
       border-radius: 2px;
     }
 
-    .about-content {
+    .contact-info {
       display: flex;
-      flex-wrap: wrap;
-      gap: 40px;
-      align-items: center;
-      justify-content: space-between;
-    }
-
-    .about-text {
-      flex: 1;
-      min-width: 280px;
-    }
-
-    .about-text h2 {
-      font-size: 1.8rem;
-      margin-bottom: 15px;
-    }
-
-    .about-text p {
-      line-height: 1.7;
+      flex-direction: column;
+      gap: 25px;
+      margin-top: 30px;
       font-size: 1.1rem;
-    }
-
-    .about-image {
-      flex: 1;
-      min-width: 300px;
-    }
-
-    .about-image img {
-      width: 100%;
-      height: auto;
-      object-fit: cover;
-      border-radius: 12px;
-      box-shadow: 0 5px 15px rgba(0,0,0,0.1);
-    }
-
-    .gallery {
-      margin-top: 60px;
-    }
-
-    .gallery-title {
-      text-align: center;
-      font-size: 1.7rem;
-      margin-bottom: 30px;
-    }
-
-    .gallery-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-      gap: 20px;
-    }
-
-    .gallery-grid img {
-      width: 100%;
-      height: 300px;
-      object-fit: cover;
+      background-color: #fff;
+      padding: 30px;
       border-radius: 10px;
-      box-shadow: 0 4px 12px rgba(0,0,0,0.1);
-      transition: transform 0.3s ease;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.05);
     }
 
-    .gallery-grid img:hover {
-      transform: scale(1.03);
+    .contact-item {
+      display: flex;
+      align-items: center;
+      gap: 15px;
+      flex-wrap: wrap;
     }
 
+    .contact-item label {
+      font-weight: 600;
+      min-width: 100px;
+    }
+
+    .contact-form {
+      margin-top: 40px;
+    }
+
+    .contact-form h3 {
+      margin-bottom: 15px;
+      font-size: 1.4rem;
+      text-align: center;
+    }
+
+    .contact-form form {
+      display: flex;
+      flex-direction: column;
+      gap: 15px;
+    }
+
+    .contact-form input,
+    .contact-form textarea {
+      padding: 12px;
+      font-size: 1rem;
+      border: 1px solid #ccc;
+      border-radius: 6px;
+    }
+
+    .contact-form button {
+      background-color: #2e2b26;
+      color: #fff;
+      border: none;
+      padding: 12px;
+      font-size: 1rem;
+      border-radius: 6px;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+    }
+
+    .contact-form button:hover {
+      background-color: #caa85e;
+      color: #2e2b26;
+    }
+
+    /* Mobile and Tablet Responsive Styles */
     @media (max-width: 768px) {
       header h1 {
-        font-size: 2.2rem;
+        font-size: 2rem;
       }
 
-      .section-title {
-        font-size: 1.7rem;
-      }
-
-      .about-content {
+      nav {
         flex-direction: column;
-        text-align: center;
-      }
-
-      .about-text h2 {
-        font-size: 1.5rem;
-      }
-
-      .about-text p {
-        font-size: 1rem;
-      }
-
-      .gallery-title {
-        font-size: 1.4rem;
+        align-items: center;
       }
 
       nav a {
+        margin: 8px 0;
         font-size: 1rem;
-        margin: 8px 10px;
+      }
+
+      .contact-container h2 {
+        font-size: 1.8rem;
+      }
+
+      .contact-info {
+        font-size: 1rem;
+        padding: 20px;
+      }
+
+      .contact-item {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+
+      .contact-form h3 {
+        font-size: 1.2rem;
+      }
+
+      .contact-form input,
+      .contact-form textarea {
+        font-size: 1rem;
+      }
+
+      .contact-form button {
+        font-size: 1rem;
       }
     }
 
     @media (max-width: 480px) {
-      .gallery-grid img {
-        height: 220px;
+      .contact-container {
+        padding: 0 10px;
       }
 
-      .about-text p {
-        font-size: 0.95rem;
+      .contact-container h2 {
+        font-size: 1.4rem;
+      }
+
+      .contact-form h3 {
+        font-size: 1rem;
+      }
+
+      .contact-form input,
+      .contact-form textarea {
+        font-size: 1rem;
       }
     }
   </style>
@@ -188,34 +208,41 @@
   <nav>
     <a href="index.html">Home</a>
     <a href="Drops.html">Drops</a>
-    <a href="contacts.html">Contact</a>
+    <a href="about.html">About</a>
   </nav>
 
-  <section class="about-container">
-    <h2 class="section-title">About the Brand</h2>
-    <div class="about-content">
-      <div class="about-text">
-        <h2>Rooted in Style</h2>
-        <p>
-          EarthBound is a lifestyle clothing brand grounded in nature and driven by authenticity. Born from a desire to blend modern streetwear with earthy tones and sustainable values, we bring you fashion that feels just as good as it looks.
-        </p>
-        <p>
-          Each piece in our collection tells a story — a story of freedom, earth, and expression. Our designs are minimal, functional, and made for everyone who walks their own path.
-        </p>
+  <section class="contact-container">
+    <h2>Contact Us</h2>
+
+    <div class="contact-info">
+      <div class="contact-item">
+        <label>Email:</label>
+        <span>damionearthbound47@gmail.com</span>
+        <span>ogproduction460@gmail.com</span>
       </div>
-      <div class="about-image">
-        <img src="logo1.png" alt="EarthBound Brand Photo"/>
+      <div class="contact-item">
+        <label>Phone:</label>
+        <span>+27 71 317 3444</span>
+        <span>+27 65 294 1696</span>
+      </div>
+      <div class="contact-item">
+        <label>Address:</label>
+        <span>123 Earth Street, Cape Town, South Africa</span>
+      </div>
+      <div class="contact-item">
+        <label>Instagram:</label>
+        <span>@earthboundwear</span>
       </div>
     </div>
 
-    <div class="gallery">
-      <h3 class="gallery-title">Photo Gallery</h3>
-      <div class="gallery-grid">
-        <img src="b1.png" alt="Gallery 1" />
-        <img src="b3.png" alt="Gallery 2" />
-        <img src="b14.png" alt="Gallery 3" />
-        <img src="b7.png" alt="Gallery 4" />
-      </div>
+    <div class="contact-form">
+      <h3>Send Us a Message</h3>
+      <form>
+        <input type="text" placeholder="Your Name" required />
+        <input type="email" placeholder="Your Email" required />
+        <textarea rows="5" placeholder="Your Message" required></textarea>
+        <button type="submit">Send Message</button>
+      </form>
     </div>
   </section>
 
