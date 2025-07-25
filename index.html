@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" />
   <title>EarthBound Clothing</title>
   <style>
     body {
@@ -228,6 +228,32 @@
       .about p {
         font-size: 1rem;
         padding: 0 10px;
+      }
+    }
+
+    /* Tablet Responsiveness */
+    @media (min-width: 769px) and (max-width: 1024px) {
+      .product,
+      .model {
+        width: 45%;
+      }
+
+      .product-grid,
+      .model-grid {
+        gap: 20px;
+      }
+    }
+
+    /* Desktop Responsiveness */
+    @media (min-width: 1025px) {
+      .product,
+      .model {
+        width: 28%;
+      }
+
+      .product-grid,
+      .model-grid {
+        gap: 30px;
       }
     }
   </style>
