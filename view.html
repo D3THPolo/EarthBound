@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Product View | EarthBound</title>
+  <style>
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      background-color: #f4f3ef;
+      margin: 0;
+      padding: 0;
+      color: #1d1d1d;
+    }
+
+    .container {
+      max-width: 900px;
+      margin: 0 auto;
+      background: #fff;
+      border-radius: 12px;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+      padding: 30px 20px;
+      text-align: center;
+    }
+
+    img {
+      width: 100%;
+      max-width: 500px;
+      height: auto;
+      object-fit: contain;
+      border-radius: 10px;
+      margin-bottom: 20px;
+    }
+
+    h1 {
+      font-size: 2rem;
+      margin-bottom: 10px;
+    }
+
+    .price {
+      font-size: 1.4rem;
+      color: #c0a862;
+      margin-bottom: 20px;
+    }
+
+    .description {
+      font-size: 1.1rem;
+      margin-bottom: 30px;
+      color: #444;
+      padding: 0 10px;
+    }
+
+    .btn {
+      background-color: #2e2b26;
+      color: #fff;
+      padding: 12px 25px;
+      border: none;
+      text-decoration: none;
+      font-size: 1rem;
+      border-radius: 5px;
+      transition: 0.3s ease;
+      display: inline-block;
+      margin: 10px;
+    }
+
+    .btn:hover {
+      background-color: #c0a862;
+      color: #000;
+    }
+
+    @media (max-width: 768px) {
+      .container {
+        padding: 20px 15px;
+      }
+
+      h1 {
+        font-size: 1.5rem;
+      }
+
+      .price {
+        font-size: 1.2rem;
+      }
+
+      .description {
+        font-size: 1rem;
+      }
+
+      .btn {
+        font-size: 0.95rem;
+        padding: 10px 20px;
+      }
+
+      img {
+        max-width: 100%;
+        height: auto;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <div class="container">
+    <img id="product-image" src="" alt="Product Image" />
+    <h1 id="product-name">Loading...</h1>
+    <p class="price" id="product-price"></p>
+    <p class="description" id="product-description"></p>
+    <a class="btn" href="https://www.whatsapp.com/catalog/27652941696/?app_absent=0" target="_blank">Buy Now on WhatsApp</a>
+    <button class="btn" onclick="goBack()">Go Back</button>
+  </div>
+
+  <script>
+    const products = {
+      "earthbound-tshirt": {
+        name: "EarthBound T-Shirt",
+        price: "R199.99",
+        image: "b1.png",
+        description: "Includes 1x Premium EarthBound T-shirt made from soft cotton blend. Comes in multiple sizes."
+      },
+      "earthbound-hats": {
+        name: "EarthBound Hats",
+        price: "R149.99",
+        image: "b2.png",
+        description: "Includes 1x EarthBound-branded snapback or bucket hat. One-size fits all."
+      },
+      "bound-comba": {
+        name: "Bound Comba",
+        price: "R399.99",
+        image: "b3.png",
+        description: "Combo includes pants, shirt, and accessories styled for urban fashion."
+      },
+      "earthbound-crew-neck": {
+        name: "EarthBound Crew Neckline",
+        price: "R299.99",
+        image: "b4 (1).png",
+        description: "Warm fleece-lined crewneck sweater with EarthBound logo embroidery."
+      },
+      "earthbound-crew-neck-2": {
+        name: "EarthBound Crew Neckline",
+        price: "R299.99",
+        image: "b12.png",
+        description: "Limited edition color variant. Premium fit and finish."
+      },
+      "earthbound-combo": {
+        name: "EarthBound Combo",
+        price: "R299.99",
+        image: "b7.png",
+        description: "Get 1x shirt + 1x cap combo at a discounted bundle price."
+      },
+      "bound-combo": {
+        name: "Bound Combo",
+        price: "R399.99",
+        image: "b14.png",
+        description: "Get 1x hoodie + 1x pants + accessories in this limited set."
+      },
+      "unknown-combo": {
+        name: "Bound Hat?",
+        price: "R299.99",
+        image: "b18.png",
+        description: "Mystery combo. Contact us to confirm details before purchase."
+      },
+      "winter-combo": {
+        name: "Winter Combo",
+        price: "R449.99",
+        image: "B17.png",
+        description: "Perfect for cold weather. Includes hoodie, track pants, and gloves."
+      },
+      "sailor-bound": {
+        name: "Sailor Bound",
+        price: "R249.99",
+        image: "B16.png",
+        description: "Classic sailor-style shirt with bold EarthBound print."
+      }
+    };
+
+    const params = new URLSearchParams(window.location.search);
+    const productKey = params.get("product");
+    const product = products[productKey];
+
+    if (product) {
+      document.getElementById("product-name").textContent = product.name;
+      document.getElementById("product-price").textContent = product.price;
+      document.getElementById("product-description").textContent = product.description;
+      document.getElementById("product-image").src = product.image;
+      document.getElementById("product-image").alt = product.name;
+    } else {
+      document.querySelector(".container").innerHTML = "<h1>Product not found</h1><p>We couldn't find the product you're looking for.</p>";
+    }
+
+    function goBack() {
+      window.history.back();
+    }
+  </script>
+</body>
+</html>
