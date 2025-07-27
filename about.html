@@ -2,249 +2,146 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Contact EarthBound</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>About | EarthBound</title>
   <style>
-    body {
+    * {
       margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
       font-family: 'Segoe UI', sans-serif;
-      background-color: #f5f3ef;
-      color: #2e2b26;
+      background-color: #f4f4f4;
+      color: #1a1a1a;
     }
 
     header {
-      background-color: #2e2b26;
-      color: #f5f3ef;
-      padding: 30px 0;
+      background-color: #000;
+      color: #fff;
+      padding: 20px;
       text-align: center;
-    }
-
-    header h1 {
-      font-size: 2.5rem;
-      letter-spacing: 2px;
-      margin: 0;
     }
 
     nav {
-      background-color: #3b372f;
       display: flex;
       justify-content: center;
+      gap: 30px;
       flex-wrap: wrap;
-      padding: 12px 0;
     }
 
     nav a {
-      color: #e4e0d2;
+      color: #fff;
       text-decoration: none;
-      margin: 0 18px;
-      font-size: 1.1rem;
       font-weight: 600;
-      transition: color 0.3s ease;
+      padding: 10px 20px;
+      border-radius: 8px;
+      transition: background 0.3s;
     }
 
     nav a:hover {
-      color: #caa85e;
+      background-color: #222;
     }
 
-    .contact-container {
-      max-width: 900px;
-      margin: 50px auto;
-      padding: 0 20px;
-    }
-
-    .contact-container h2 {
-      text-align: center;
-      font-size: 2.2rem;
-      margin-bottom: 30px;
-      position: relative;
-    }
-
-    .contact-container h2::after {
-      content: '';
-      height: 4px;
-      width: 80px;
-      background-color: #caa85e;
-      position: absolute;
-      left: 50%;
-      bottom: -10px;
-      transform: translateX(-50%);
-      border-radius: 2px;
-    }
-
-    .contact-info {
-      display: flex;
-      flex-direction: column;
-      gap: 25px;
-      margin-top: 30px;
-      font-size: 1.1rem;
+    .container {
+      max-width: 1000px;
+      margin: 40px auto;
+      padding: 20px;
       background-color: #fff;
-      padding: 30px;
-      border-radius: 10px;
-      box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+      border-radius: 15px;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
     }
 
-    .contact-item {
+    .about-content {
       display: flex;
-      align-items: center;
-      gap: 15px;
+      align-items: flex-start;
+      gap: 30px;
       flex-wrap: wrap;
     }
 
-    .contact-item label {
-      font-weight: 600;
-      min-width: 100px;
+    .about-logo {
+      flex: 0 0 120px;
     }
 
-    .contact-form {
-      margin-top: 40px;
+    .about-logo img {
+      width: 100%;
+      border-radius: 10px;
     }
 
-    .contact-form h3 {
+    .about-text {
+      flex: 1;
+    }
+
+    .about-text h1 {
+      font-size: 2.2rem;
       margin-bottom: 15px;
-      font-size: 1.4rem;
-      text-align: center;
     }
 
-    .contact-form form {
-      display: flex;
-      flex-direction: column;
-      gap: 15px;
+    .about-text p {
+      font-size: 1.1rem;
+      line-height: 1.7;
+      margin-bottom: 15px;
     }
 
-    .contact-form input,
-    .contact-form textarea {
-      padding: 12px;
-      font-size: 1rem;
-      border: 1px solid #ccc;
-      border-radius: 6px;
+    .highlight {
+      font-weight: bold;
+      color: #333;
     }
 
-    .contact-form button {
-      background-color: #2e2b26;
-      color: #fff;
-      border: none;
-      padding: 12px;
-      font-size: 1rem;
-      border-radius: 6px;
-      cursor: pointer;
-      transition: background-color 0.3s ease;
-    }
-
-    .contact-form button:hover {
-      background-color: #caa85e;
-      color: #2e2b26;
-    }
-
-    /* Mobile and Tablet Responsive Styles */
     @media (max-width: 768px) {
-      header h1 {
-        font-size: 2rem;
-      }
-
-      nav {
+      .about-content {
         flex-direction: column;
         align-items: center;
       }
 
-      nav a {
-        margin: 8px 0;
-        font-size: 1rem;
-      }
-
-      .contact-container h2 {
+      .about-text h1 {
+        text-align: center;
         font-size: 1.8rem;
       }
 
-      .contact-info {
+      .about-text p {
         font-size: 1rem;
-        padding: 20px;
+        text-align: center;
       }
 
-      .contact-item {
-        flex-direction: column;
-        align-items: flex-start;
-      }
-
-      .contact-form h3 {
-        font-size: 1.2rem;
-      }
-
-      .contact-form input,
-      .contact-form textarea {
-        font-size: 1rem;
-      }
-
-      .contact-form button {
-        font-size: 1rem;
-      }
-    }
-
-    @media (max-width: 480px) {
-      .contact-container {
-        padding: 0 10px;
-      }
-
-      .contact-container h2 {
-        font-size: 1.4rem;
-      }
-
-      .contact-form h3 {
-        font-size: 1rem;
-      }
-
-      .contact-form input,
-      .contact-form textarea {
-        font-size: 1rem;
+      nav {
+        gap: 15px;
       }
     }
   </style>
 </head>
 <body>
 
+  <!-- Header with only navigation -->
   <header>
-    <h1>EarthBound</h1>
+    <nav>
+      <a href="index.html">Home</a>
+      <a href="drops.html">Drops</a>
+      <a href="contact.html">Contact</a>
+    </nav>
   </header>
 
-  <nav>
-    <a href="index.html">Home</a>
-    <a href="Drops.html">Drops</a>
-    <a href="about.html">About</a>
-  </nav>
-
-  <section class="contact-container">
-    <h2>Contact Us</h2>
-
-    <div class="contact-info">
-      <div class="contact-item">
-        <label>Email:</label>
-        <span>damionearthbound47@gmail.com</span>
-        <span>ogproduction460@gmail.com</span>
+  <!-- About Section -->
+  <div class="container">
+    <div class="about-content">
+      <div class="about-logo">
+        <img src="logo1.png" alt="EarthBound Brand Icon" />
       </div>
-      <div class="contact-item">
-        <label>Phone:</label>
-        <span>+27 71 317 3444</span>
-        <span>+27 65 294 1696</span>
-      </div>
-      <div class="contact-item">
-        <label>Address:</label>
-        <span>123 Earth Street, Cape Town, South Africa</span>
-      </div>
-      <div class="contact-item">
-        <label>Instagram:</label>
-        <span>@earthboundwear</span>
+      <div class="about-text">
+        <h1>About EarthBound</h1>
+        <p>
+          <span class="highlight">EarthBound</span> is more than just a clothing label — it's a reflection of bold ideas, real people, and a community rising from the underground. Born out of the creative hustle of South Africa, EarthBound represents freedom of expression and the drive to stand out while staying grounded.
+        </p>
+        <p>
+          Our drops are inspired by real stories, late nights, and raw ambition. Whether you're grinding in the city or creating in your bedroom, EarthBound is for those who refuse to follow trends and instead create their own lane.
+        </p>
+        <p>
+          Each piece carries the spirit of hustle, art, and authenticity — because that’s who we are. This is just the beginning. <span class="highlight">We’re still building. Still dreaming. Still grounded.</span> Welcome to EarthBound.
+        </p>
       </div>
     </div>
-
-    <div class="contact-form">
-      <h3>Send Us a Message</h3>
-      <form>
-        <input type="text" placeholder="Your Name" required />
-        <input type="email" placeholder="Your Email" required />
-        <textarea rows="5" placeholder="Your Message" required></textarea>
-        <button type="submit">Send Message</button>
-      </form>
-    </div>
-  </section>
+  </div>
 
 </body>
 </html>
