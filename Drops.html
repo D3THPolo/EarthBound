@@ -70,6 +70,9 @@
       overflow: hidden;
       box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
       transition: transform 0.3s ease;
+      display: block;
+      text-decoration: none;
+      color: inherit;
     }
 
     .drop-item:hover {
@@ -97,7 +100,6 @@
       font-size: 1rem;
     }
 
-    /* Mobile Responsiveness */
     @media (max-width: 768px) {
       .drop-item img {
         height: 280px;
@@ -120,41 +122,9 @@
       }
     }
 
-    /* Tablet Responsiveness */
     @media (min-width: 769px) and (max-width: 1024px) {
       .drop-item img {
         height: 300px;
-      }
-
-      .drop-info h3 {
-        font-size: 1.3rem;
-      }
-
-      .drop-info p {
-        font-size: 1rem;
-      }
-    }
-
-    /* Desktop Responsiveness */
-    @media (min-width: 1025px) {
-      .drop-item img {
-        height: 350px;
-      }
-
-      .drop-info h3 {
-        font-size: 1.5rem;
-      }
-
-      .drop-info p {
-        font-size: 1.1rem;
-      }
-
-      .drops-container h2 {
-        font-size: 2.2rem;
-      }
-
-      nav a {
-        font-size: 1.1rem;
       }
     }
   </style>
@@ -175,76 +145,76 @@
   <div class="drops-container">
     <h2>All Drops</h2>
     <div class="drop-grid">
-      <div class="drop-item">
+      <a href="view.html?product=earthbound-tshirt" class="drop-item">
         <img src="b1.png" alt="EarthBound Hoodie">
         <div class="drop-info">
           <h3>EarthBound T-Shirt</h3>
           <p>R199.99</p>
         </div>
-      </div>
-      <div class="drop-item">
+      </a>
+      <a href="view.html?product=earthbound-hats" class="drop-item">
         <img src="b2.png" alt="EarthBound Tee">
         <div class="drop-info">
           <h3>EarthBound Hats</h3>
           <p>R149.99</p>
         </div>
-      </div>
-      <div class="drop-item">
+      </a>
+      <a href="view.html?product=bound-comba" class="drop-item">
         <img src="b3.png" alt="Denim Pants">
         <div class="drop-info">
           <h3>Bound Comba</h3>
           <p>R399.99</p>
         </div>
-      </div>
-      <div class="drop-item">
+      </a>
+      <a href="view.html?product=earthbound-crew-neck" class="drop-item">
         <img src="b4 (1).png" alt="Windbreaker">
         <div class="drop-info">
           <h3>EarthBound Crew Neckline</h3>
           <p>R299.99</p>
         </div>
-      </div>
-      <div class="drop-item">
+      </a>
+      <a href="view.html?product=earthbound-crew-neck-2" class="drop-item">
         <img src="b12.png" alt="Cargo Pants">
         <div class="drop-info">
           <h3>EarthBound Crew Neckline</h3>
           <p>R299.99</p>
         </div>
-      </div>
-      <div class="drop-item">
+      </a>
+      <a href="view.html?product=earthbound-combo" class="drop-item">
         <img src="b7.png" alt="Beanie Cap">
         <div class="drop-info">
           <h3>EarthBound Combo</h3>
           <p>R299.99</p>
         </div>
-      </div>
-      <div class="drop-item">
+      </a>
+      <a href="view.html?product=bound-combo" class="drop-item">
         <img src="b14.png" alt="Earth Cap">
         <div class="drop-info">
           <h3>Bound Combo</h3>
           <p>R399.99</p>
         </div>
-      </div>
-      <div class="drop-item">
+      </a>
+      <a href="view.html?product=unknown-combo" class="drop-item">
         <img src="b18.png" alt="Canvas Tote Bag">
         <div class="drop-info">
-          <h3>Bound Combo</h3>
+          <h3>Bound Hat</h3>
           <p>R299.99</p>
         </div>
-      </div>
-      <div class="drop-item">
+      </a>
+      <a href="view.html?product=winter-combo" class="drop-item">
         <img src="B17.png" alt="Classic Tracksuit">
         <div class="drop-info">
           <h3>Winter Combo</h3>
           <p>R449.99</p>
         </div>
-      </div>
-      <div class="drop-item">
+      </a>
+      <a href="view.html?product=sailor-bound" class="drop-item">
         <img src="B16.png" alt="Retro Earth Tee">
         <div class="drop-info">
           <h3>Sailor Bound</h3>
           <p>R249.99</p>
         </div>
-      </div>
+      </a>
     </div>
   </div>
 
