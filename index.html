@@ -72,7 +72,9 @@
       font-weight: 500;
       opacity: 0;
       transform: translateY(30px) rotate(15deg);
+      color: #3e3d36;
       animation: stepIn 1.5s ease-out forwards;
+      transition: transform 0.5s ease, opacity 0.5s ease, color 0.5s ease; /* Smooth transition for transform, opacity, and color */
     }
 
     @keyframes stepIn {
@@ -87,7 +89,13 @@
       100% {
         opacity: 1;
         transform: translateY(0) rotate(0);
+        color: #d1b172; /* Change text color to give a glowing effect */
       }
+    }
+
+    .slogan:hover {
+      transform: translateY(5px) rotate(3deg); /* Add a subtle hover effect */
+      color: #d1b172; /* Change color on hover */
     }
 
     .fade-in {
