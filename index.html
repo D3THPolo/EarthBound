@@ -63,20 +63,30 @@
       background-color: #d9ccb2;
       padding: 80px 20px 60px;
       text-align: center;
+      position: relative;
+      overflow: hidden;
     }
 
     .slogan {
-      font-size: 1.8rem;
+      font-size: 2rem;
       font-weight: 500;
       opacity: 0;
-      transform: translateY(30px);
-      animation: fadeUp 1.5s ease-out forwards;
+      transform: translateY(30px) rotate(15deg);
+      animation: stepIn 1.5s ease-out forwards;
     }
 
-    @keyframes fadeUp {
-      to {
+    @keyframes stepIn {
+      0% {
+        opacity: 0;
+        transform: translateY(30px) rotate(15deg);
+      }
+      50% {
+        opacity: 0.5;
+        transform: translateY(10px) rotate(5deg);
+      }
+      100% {
         opacity: 1;
-        transform: translateY(0);
+        transform: translateY(0) rotate(0);
       }
     }
 
