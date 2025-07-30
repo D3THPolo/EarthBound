@@ -2,153 +2,219 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" />
   <title>EarthBound Clothing</title>
 
-  <!-- Font Awesome for icons -->
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
-
-  <!-- Lottie Player -->
-  <script src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js"></script>
+  <!-- Font Awesome CDN for icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 
   <style>
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-    }
-
     body {
-      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-      background-color: #f4f4f4;
+      margin: 0;
+      font-family: 'Segoe UI', sans-serif;
+      background-color: #f4f2ec;
       color: #333;
-      line-height: 1.6;
     }
 
     header {
-      background-color: #000;
-      color: #fff;
-      padding: 20px;
+      background-color: #3e3d36;
+      color: #e8e4d9;
+      padding: 20px 40px;
       text-align: center;
-      animation: fadeDown 1s ease-out;
+      position: sticky;
+      top: 0;
+      z-index: 1000;
     }
 
-    header h1 {
-      font-size: 2rem;
+    .brand {
+      font-size: 2.5rem;
+      font-weight: 700;
       letter-spacing: 2px;
+      margin-bottom: 10px;
+      font-family: 'Georgia', serif;
     }
 
-    nav {
+    nav ul {
+      list-style: none;
+      padding: 0;
+      margin: 0;
       display: flex;
       justify-content: center;
-      background-color: #111;
-      padding: 10px 0;
+      gap: 30px;
     }
 
     nav a {
-      color: #fff;
-      margin: 0 20px;
       text-decoration: none;
-      font-size: 1rem;
-      display: flex;
-      align-items: center;
-      gap: 8px;
+      color: #e8e4d9;
+      font-size: 1.1rem;
+      font-weight: 500;
       transition: color 0.3s ease;
     }
 
+    nav a i {
+      margin-right: 8px;
+    }
+
     nav a:hover {
-      color: #ccc;
+      color: #d1b172;
     }
 
-    .slogan-container {
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      margin: 30px 0;
-      animation: fadeUp 1.5s ease-out;
+    .slogan-section {
+      background-color: #d9ccb2;
+      padding: 80px 20px 60px;
+      text-align: center;
     }
 
-    .slogan-text {
+    .slogan {
       font-size: 1.8rem;
-      font-weight: 600;
-      margin-top: 10px;
-      color: #3e3d36;
+      font-weight: 500;
+      opacity: 0;
+      transform: translateY(30px);
+      animation: fadeUp 1.5s ease-out forwards;
     }
 
+    @keyframes fadeUp {
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    .fade-in {
+      opacity: 0;
+      transform: translateY(40px);
+      transition: opacity 1s ease-out, transform 1s ease-out;
+    }
+
+    .fade-in.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    .model-section,
+    .products,
+    .brand-summary,
+    .about {
+      padding: 60px 20px;
+      text-align: center;
+    }
+
+    .model-section h2,
+    .products h2,
+    .brand-summary h2,
+    .about h2 {
+      font-size: 2rem;
+      margin-bottom: 30px;
+      font-weight: 600;
+    }
+
+    .model-grid,
     .product-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-      gap: 20px;
-      padding: 30px;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 25px;
+    }
+
+    .model, .product {
+      width: 280px;
+    }
+
+    .model img, .product img {
+      width: 100%;
+      height: auto;
+      border-radius: 10px;
     }
 
     .product {
-      background: #fff;
-      padding: 15px;
+      background-color: #fff;
+      padding: 20px;
       border-radius: 10px;
-      box-shadow: 0 4px 8px rgba(0,0,0,0.1);
-      text-align: center;
-      transition: transform 0.3s ease;
-    }
-
-    .product:hover {
-      transform: translateY(-5px);
-    }
-
-    .product img {
-      width: 100%;
-      height: 250px;
-      object-fit: cover;
-      border-radius: 8px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.1);
+      position: relative;
     }
 
     .product h3 {
-      margin: 10px 0 5px;
+      margin: 15px 0 10px;
       font-size: 1.2rem;
     }
 
     .product p {
-      font-size: 0.9rem;
-      color: #555;
+      color: #6b5e53;
+      margin-bottom: 15px;
+    }
+
+    .product a {
+      display: inline-block;
+      padding: 10px 20px;
+      background-color: #25D366;
+      color: white;
+      text-decoration: none;
+      border-radius: 8px;
+      font-weight: bold;
+      transition: background 0.3s ease;
+    }
+
+    .product a:hover {
+      background-color: #128C7E;
+    }
+
+    .brand-summary p,
+    .about p {
+      max-width: 800px;
+      margin: 0 auto;
+      font-size: 1.1rem;
+      line-height: 1.6;
     }
 
     footer {
-      background: #111;
-      color: #fff;
+      background-color: #3e3d36;
+      color: #e8e4d9;
       text-align: center;
-      padding: 20px 10px;
-      margin-top: 40px;
-      font-size: 0.9rem;
+      padding: 20px;
     }
 
-    footer a {
-      color: #fff;
-      text-decoration: none;
-    }
-
-    footer a:hover {
-      text-decoration: underline;
-    }
-
-    @keyframes fadeUp {
-      0% {
-        opacity: 0;
-        transform: translateY(40px);
+    @media (max-width: 768px) {
+      nav ul {
+        flex-direction: column;
+        gap: 15px;
       }
-      100% {
-        opacity: 1;
-        transform: translateY(0);
+
+      .brand {
+        font-size: 1.8rem;
+      }
+
+      nav a {
+        font-size: 1rem;
+      }
+
+      .slogan {
+        font-size: 1.4rem;
+        padding: 0 10px;
+      }
+
+      .model, .product {
+        width: 90%;
+      }
+
+      .brand-summary p,
+      .about p {
+        font-size: 1rem;
+        padding: 0 10px;
       }
     }
 
-    @keyframes fadeDown {
-      0% {
-        opacity: 0;
-        transform: translateY(-20px);
+    @media (min-width: 769px) and (max-width: 1024px) {
+      .product,
+      .model {
+        width: 45%;
       }
-      100% {
-        opacity: 1;
-        transform: translateY(0);
+    }
+
+    @media (min-width: 1025px) {
+      .product,
+      .model {
+        width: 28%;
       }
     }
   </style>
@@ -156,56 +222,88 @@
 <body>
 
   <header>
-    <h1>EarthBound Clothing</h1>
+    <div class="brand">EarthBound</div>
+    <nav>
+      <ul>
+        <li><a href="Drops.html"><i class="fas fa-fire"></i> Drops</a></li>
+        <li><a href="about.html"><i class="fas fa-user"></i> About</a></li>
+        <li><a href="contacts.html"><i class="fas fa-envelope"></i> Contact</a></li>
+      </ul>
+    </nav>
   </header>
 
-  <nav>
-    <a href="index.html"><i class="fas fa-home"></i> Home</a>
-    <a href="Drops.html"><i class="fas fa-fire"></i> Drops</a>
-    <a href="about.html"><i class="fas fa-user"></i> About</a>
-  </nav>
-
-  <section class="slogan-container">
-    <lottie-player
-      src="https://lottie.host/7d64d328-8979-4701-9d60-b2a9d2cc2733/IURGP7uD2s.json"
-      background="transparent"
-      speed="1"
-      style="width: 200px; height: 200px;"
-      loop
-      autoplay
-    ></lottie-player>
-    <div class="slogan-text">Step Into Style</div>
+  <section class="slogan-section">
+    <div class="slogan">Step Into Style</div>
   </section>
 
-  <section class="product-grid">
-    <div class="product">
-      <img src="https://via.placeholder.com/250x250?text=Black+Tee" alt="Black T-shirt">
-      <h3>Classic Black T-shirt</h3>
-      <p>Slim fit, 100% cotton. R249.99</p>
+  <section class="model-section fade-in">
+    <h2>Model Showcases</h2>
+    <div class="model-grid">
+      <div class="model"><img src="B17.png" alt="Model 1" /></div>
+      <div class="model"><img src="b1.png" alt="Model 2" /></div>
+      <div class="model"><img src="b3.png" alt="Model 3" /></div>
     </div>
+  </section>
 
-    <div class="product">
-      <img src="https://via.placeholder.com/250x250?text=Hoodie" alt="EarthBound Hoodie">
-      <h3>EarthBound Hoodie</h3>
-      <p>Cozy and warm, fleece-lined. R499.99</p>
+  <section class="products fade-in">
+    <h2>Featured Drops</h2>
+    <div class="product-grid">
+      <div class="product">
+        <img src="b9.png" alt="Model in Hoodie" />
+        <h3>Bound Caps</h3>
+        <p>R149.99</p>
+        <a href="https://www.whatsapp.com/catalog/27652941696/?app_absent=0" target="_blank">
+          Buy Now on WhatsApp
+        </a>
+      </div>
+      <div class="product">
+        <img src="b10.png" alt="Hoodie" />
+        <h3>EarthBound Hoodie</h3>
+        <p>R349.99</p>
+        <a href="https://www.whatsapp.com/catalog/27652941696/?app_absent=0" target="_blank">
+          Buy Now on WhatsApp
+        </a>
+      </div>
+      <div class="product">
+        <img src="b11.png" alt="Bound T-Shirt" />
+        <h3>Bound T-Shirt</h3>
+        <p>R199.99</p>
+        <a href="https://www.whatsapp.com/catalog/27652941696/?app_absent=0" target="_blank">
+          Buy Now on WhatsApp
+        </a>
+      </div>
     </div>
+  </section>
 
-    <div class="product">
-      <img src="https://via.placeholder.com/250x250?text=Sneakers" alt="Sneakers">
-      <h3>Urban Sneakers</h3>
-      <p>Durable rubber sole. R699.99</p>
-    </div>
+  <section class="brand-summary fade-in">
+    <h2>Who We Are</h2>
+    <p>
+      EarthBound blends fashion with purpose. Inspired by nature and grounded in everyday hustle, our collections are crafted for individuals who wear their journey. Designed in South Africa, EarthBound is a tribute to simplicity, culture, and raw creativity. 
+    </p>
+  </section>
 
-    <div class="product">
-      <img src="https://via.placeholder.com/250x250?text=Cap" alt="Cap">
-      <h3>Minimalist Cap</h3>
-      <p>Adjustable fit, embroidered logo. R199.99</p>
-    </div>
+  <section class="about fade-in">
+    <h2>About EarthBound</h2>
+    <p>
+      EarthBound is a fashion-forward brand focused on clean design and conscious streetwear. Please note: we promote small brands and sellers on this site — if a business fails to deliver a product or service, we are not responsible for that transaction. Always verify before purchase.
+    </p>
   </section>
 
   <footer>
-    &copy; 2025 EarthBound Clothing | Designed by You | <a href="mailto:info@earthbound.co.za">Contact Us</a>
+    <p>© 2025 EarthBound. All rights reserved.</p>
   </footer>
+
+  <script>
+    const fadeEls = document.querySelectorAll('.fade-in');
+    const observer = new IntersectionObserver(entries => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('visible');
+        }
+      });
+    }, { threshold: 0.1 });
+    fadeEls.forEach(el => observer.observe(el));
+  </script>
 
 </body>
 </html>
