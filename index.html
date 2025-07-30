@@ -73,6 +73,188 @@
       animation: fadeUp 1.5s ease-out forwards;
     }
 
+    .step-container {
+      position: relative;
+      display: inline-block;
+    }
+
+    .stepper {
+      position: absolute;
+      bottom: -20px;
+      left: 50%;
+      transform: translateX(-50%);
+      font-size: 3rem;
+      opacity: 0;
+      animation: stepIn 2s forwards;
+    }
+
+    @keyframes stepIn {
+      0% {
+        opacity: 0;
+        transform: translateX(-50%) translateY(50px);
+      }
+      50% {
+        opacity: 1;
+        transform: translateX(-50%) translateY(0);
+      }
+      100% {
+        opacity: 1;
+        transform: translateX(-50%) translateY(0);
+      }
+    }
+
+    .fade-in {
+      opacity: 0;
+      transform: translateY(40px);
+      transition: opacity 1s ease-out, transform 1s ease-out;
+    }
+
+    .fade-in.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    footer {
+      background-color: #3e3d36;
+      color: #e8e4d9;
+      text-align: center;
+      padding: 20px;
+    }
+
+    @media (max-width: 768px) {
+      nav ul {
+        flex-direction: column;
+        gap: 15px;
+      }
+
+      .brand {
+        font-size: 1.8rem;
+      }
+
+      nav a {
+        font-size: 1rem;
+      }
+
+      .slogan {
+        font-size: 1.4rem;
+        padding: 0 10px;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <div class="brand">EarthBound</div>
+    <nav>
+      <ul>
+        <li><a href="Drops.html"><i class="fas fa-fire"></i> Drops</a></li>
+        <li><a href="about.html"><i class="fas fa-user"></i> About</a></li>
+        <li><a href="contacts.html"><i class="fas fa-envelope"></i> Contact</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <section class="slogan-section">
+    <div class="step-container">
+      <div class="stepper">👟</div> <!-- You can replace the "👟" with any image or element you prefer -->
+      <div class="slogan">Step Into Style</div>
+    </div>
+  </section>
+
+  <footer>
+    <p>© 2025 EarthBound. All rights reserved.</p>
+  </footer>
+
+  <script>
+    const fadeEls = document.querySelectorAll('.fade-in');
+    const observer = new IntersectionObserver(entries => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('visible');
+        }
+      });
+    }, { threshold: 0.1 });
+    fadeEls.forEach(el => observer.observe(el));
+  </script>
+
+</body>
+</html>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" />
+  <title>EarthBound Clothing</title>
+
+  <!-- Font Awesome CDN for icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Segoe UI', sans-serif;
+      background-color: #f4f2ec;
+      color: #333;
+    }
+
+    header {
+      background-color: #3e3d36;
+      color: #e8e4d9;
+      padding: 20px 40px;
+      text-align: center;
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+    }
+
+    .brand {
+      font-size: 2.5rem;
+      font-weight: 700;
+      letter-spacing: 2px;
+      margin-bottom: 10px;
+      font-family: 'Georgia', serif;
+    }
+
+    nav ul {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+      display: flex;
+      justify-content: center;
+      gap: 30px;
+    }
+
+    nav a {
+      text-decoration: none;
+      color: #e8e4d9;
+      font-size: 1.1rem;
+      font-weight: 500;
+      transition: color 0.3s ease;
+    }
+
+    nav a i {
+      margin-right: 8px;
+    }
+
+    nav a:hover {
+      color: #d1b172;
+    }
+
+    .slogan-section {
+      background-color: #d9ccb2;
+      padding: 80px 20px 60px;
+      text-align: center;
+    }
+
+    .slogan {
+      font-size: 1.8rem;
+      font-weight: 500;
+      opacity: 0;
+      transform: translateY(30px);
+      animation: fadeUp 1.5s ease-out forwards;
+    }
+
     @keyframes fadeUp {
       to {
         opacity: 1;
