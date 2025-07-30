@@ -4,6 +4,10 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" />
   <title>EarthBound Clothing</title>
+
+  <!-- Font Awesome CDN for icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
   <style>
     body {
       margin: 0;
@@ -45,6 +49,10 @@
       font-size: 1.1rem;
       font-weight: 500;
       transition: color 0.3s ease;
+    }
+
+    nav a i {
+      margin-right: 8px;
     }
 
     nav a:hover {
@@ -136,20 +144,19 @@
       margin-bottom: 15px;
     }
 
-    .product button {
-      background-color: #3e3d36;
-      color: #fff;
-      border: none;
+    .product a {
+      display: inline-block;
       padding: 10px 20px;
-      border-radius: 6px;
-      cursor: pointer;
-      font-size: 0.95rem;
+      background-color: #25D366;
+      color: white;
+      text-decoration: none;
+      border-radius: 8px;
+      font-weight: bold;
       transition: background 0.3s ease;
     }
 
-    .product button:hover {
-      background-color: #d1b172;
-      color: #3e3d36;
+    .product a:hover {
+      background-color: #128C7E;
     }
 
     .brand-summary p,
@@ -167,7 +174,6 @@
       padding: 20px;
     }
 
-    /* Mobile */
     @media (max-width: 768px) {
       nav ul {
         flex-direction: column;
@@ -198,7 +204,6 @@
       }
     }
 
-    /* Tablet */
     @media (min-width: 769px) and (max-width: 1024px) {
       .product,
       .model {
@@ -206,7 +211,6 @@
       }
     }
 
-    /* Desktop */
     @media (min-width: 1025px) {
       .product,
       .model {
@@ -221,9 +225,9 @@
     <div class="brand">EarthBound</div>
     <nav>
       <ul>
-        <li><a href="Drops.html">Drops</a></li>
-        <li><a href="about.html">About</a></li>
-        <li><a href="contacts.html">Contact</a></li>
+        <li><a href="Drops.html"><i class="fas fa-fire"></i> Drops</a></li>
+        <li><a href="about.html"><i class="fas fa-user"></i> About</a></li>
+        <li><a href="contacts.html"><i class="fas fa-envelope"></i> Contact</a></li>
       </ul>
     </nav>
   </header>
@@ -248,30 +252,24 @@
         <img src="b9.png" alt="Model in Hoodie" />
         <h3>Bound Caps</h3>
         <p>R149.99</p>
-        <a href="https://www.whatsapp.com/catalog/27652941696/?app_absent=0"
-           target="_blank"
-           style="display: inline-block; padding: 10px 20px; background-color: #25D366; color: white; text-decoration: none; border-radius: 8px; font-weight: bold;">
-           Buy Now on WhatsApp
+        <a href="https://www.whatsapp.com/catalog/27652941696/?app_absent=0" target="_blank">
+          Buy Now on WhatsApp
         </a>
       </div>
       <div class="product">
         <img src="b10.png" alt="Hoodie" />
         <h3>EarthBound Hoodie</h3>
         <p>R349.99</p>
-        <a href="https://www.whatsapp.com/catalog/27652941696/?app_absent=0"
-           target="_blank"
-           style="display: inline-block; padding: 10px 20px; background-color: #25D366; color: white; text-decoration: none; border-radius: 8px; font-weight: bold;">
-           Buy Now on WhatsApp
+        <a href="https://www.whatsapp.com/catalog/27652941696/?app_absent=0" target="_blank">
+          Buy Now on WhatsApp
         </a>
       </div>
       <div class="product">
         <img src="b11.png" alt="Bound T-Shirt" />
         <h3>Bound T-Shirt</h3>
         <p>R199.99</p>
-        <a href="https://www.whatsapp.com/catalog/27652941696/?app_absent=0"
-           target="_blank"
-           style="display: inline-block; padding: 10px 20px; background-color: #25D366; color: white; text-decoration: none; border-radius: 8px; font-weight: bold;">
-           Buy Now on WhatsApp
+        <a href="https://www.whatsapp.com/catalog/27652941696/?app_absent=0" target="_blank">
+          Buy Now on WhatsApp
         </a>
       </div>
     </div>
@@ -296,19 +294,14 @@
   </footer>
 
   <script>
-    // Reveal elements on scroll
     const fadeEls = document.querySelectorAll('.fade-in');
-
     const observer = new IntersectionObserver(entries => {
       entries.forEach(entry => {
         if (entry.isIntersecting) {
           entry.target.classList.add('visible');
         }
       });
-    }, {
-      threshold: 0.1
-    });
-
+    }, { threshold: 0.1 });
     fadeEls.forEach(el => observer.observe(el));
   </script>
 
