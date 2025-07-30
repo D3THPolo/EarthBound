@@ -41,7 +41,6 @@
       display: flex;
       justify-content: center;
       gap: 30px;
-      flex-wrap: wrap; /* Allow wrapping of the navigation links */
     }
 
     nav a {
@@ -50,8 +49,6 @@
       font-size: 1.1rem;
       font-weight: 500;
       transition: color 0.3s ease;
-      display: flex;
-      align-items: center;
     }
 
     nav a i {
@@ -62,7 +59,6 @@
       color: #d1b172;
     }
 
-    /* Navigation styling consistency */
     .slogan-section {
       background-color: #d9ccb2;
       padding: 80px 20px 60px;
@@ -78,7 +74,7 @@
       transform: translateY(30px) rotate(15deg);
       color: #3e3d36;
       animation: stepIn 1.5s ease-out forwards;
-      transition: transform 0.5s ease, opacity 0.5s ease, color 0.5s ease;
+      transition: transform 0.5s ease, opacity 0.5s ease, color 0.5s ease; /* Smooth transition for transform, opacity, and color */
     }
 
     @keyframes stepIn {
@@ -93,8 +89,13 @@
       100% {
         opacity: 1;
         transform: translateY(0) rotate(0);
-        color: #d1b172;
+        color: #d1b172; /* Change text color to give a glowing effect */
       }
+    }
+
+    .slogan:hover {
+      transform: translateY(5px) rotate(3deg); /* Add a subtle hover effect */
+      color: #d1b172; /* Change color on hover */
     }
 
     .fade-in {
@@ -108,6 +109,82 @@
       transform: translateY(0);
     }
 
+    .model-section,
+    .products,
+    .brand-summary,
+    .about {
+      padding: 60px 20px;
+      text-align: center;
+    }
+
+    .model-section h2,
+    .products h2,
+    .brand-summary h2,
+    .about h2 {
+      font-size: 2rem;
+      margin-bottom: 30px;
+      font-weight: 600;
+    }
+
+    .model-grid,
+    .product-grid {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 25px;
+    }
+
+    .model, .product {
+      width: 280px;
+    }
+
+    .model img, .product img {
+      width: 100%;
+      height: auto;
+      border-radius: 10px;
+    }
+
+    .product {
+      background-color: #fff;
+      padding: 20px;
+      border-radius: 10px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.1);
+      position: relative;
+    }
+
+    .product h3 {
+      margin: 15px 0 10px;
+      font-size: 1.2rem;
+    }
+
+    .product p {
+      color: #6b5e53;
+      margin-bottom: 15px;
+    }
+
+    .product a {
+      display: inline-block;
+      padding: 10px 20px;
+      background-color: #25D366;
+      color: white;
+      text-decoration: none;
+      border-radius: 8px;
+      font-weight: bold;
+      transition: background 0.3s ease;
+    }
+
+    .product a:hover {
+      background-color: #128C7E;
+    }
+
+    .brand-summary p,
+    .about p {
+      max-width: 800px;
+      margin: 0 auto;
+      font-size: 1.1rem;
+      line-height: 1.6;
+    }
+
     footer {
       background-color: #3e3d36;
       color: #e8e4d9;
@@ -115,6 +192,7 @@
       padding: 20px;
     }
 
+    /* Mobile responsive styles */
     @media (max-width: 768px) {
       nav ul {
         flex-direction: column;
@@ -145,6 +223,7 @@
       }
     }
 
+    /* Tablet and Small Screen sizes */
     @media (min-width: 769px) and (max-width: 1024px) {
       .product,
       .model {
@@ -152,6 +231,7 @@
       }
     }
 
+    /* Desktop sizes */
     @media (min-width: 1025px) {
       .product,
       .model {
@@ -175,6 +255,59 @@
 
   <section class="slogan-section">
     <div class="slogan">Step Into Style</div>
+  </section>
+
+  <section class="model-section fade-in">
+    <h2>Model Showcases</h2>
+    <div class="model-grid">
+      <div class="model"><img src="B17.png" alt="Model 1" /></div>
+      <div class="model"><img src="b1.png" alt="Model 2" /></div>
+      <div class="model"><img src="b3.png" alt="Model 3" /></div>
+    </div>
+  </section>
+
+  <section class="products fade-in">
+    <h2>Featured Drops</h2>
+    <div class="product-grid">
+      <div class="product">
+        <img src="b9.png" alt="Model in Hoodie" />
+        <h3>Bound Caps</h3>
+        <p>R149.99</p>
+        <a href="https://www.whatsapp.com/catalog/27652941696/?app_absent=0" target="_blank">
+          Buy Now on WhatsApp
+        </a>
+      </div>
+      <div class="product">
+        <img src="b10.png" alt="Hoodie" />
+        <h3>EarthBound Hoodie</h3>
+        <p>R349.99</p>
+        <a href="https://www.whatsapp.com/catalog/27652941696/?app_absent=0" target="_blank">
+          Buy Now on WhatsApp
+        </a>
+      </div>
+      <div class="product">
+        <img src="b11.png" alt="Bound T-Shirt" />
+        <h3>Bound T-Shirt</h3>
+        <p>R199.99</p>
+        <a href="https://www.whatsapp.com/catalog/27652941696/?app_absent=0" target="_blank">
+          Buy Now on WhatsApp
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <section class="brand-summary fade-in">
+    <h2>Who We Are</h2>
+    <p>
+      EarthBound blends fashion with purpose. Inspired by nature and grounded in everyday hustle, our collections are crafted for individuals who wear their journey. Designed in South Africa, EarthBound is a tribute to simplicity, culture, and raw creativity. 
+    </p>
+  </section>
+
+  <section class="about fade-in">
+    <h2>About EarthBound</h2>
+    <p>
+      EarthBound is a fashion-forward brand focused on clean design and conscious streetwear. Please note: we promote small brands and sellers on this site — if a business fails to deliver a product or service, we are not responsible for that transaction. Always verify before purchase.
+    </p>
   </section>
 
   <footer>
