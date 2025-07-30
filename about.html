@@ -4,6 +4,10 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>About | EarthBound</title>
+
+  <!-- Font Awesome for Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+
   <style>
     * {
       margin: 0;
@@ -38,6 +42,9 @@
       padding: 10px 20px;
       border-radius: 8px;
       transition: background 0.3s;
+      display: flex;
+      align-items: center;
+      gap: 8px;
     }
 
     nav a:hover {
@@ -113,12 +120,12 @@
 </head>
 <body>
 
-  <!-- Header with only navigation -->
+  <!-- Header with navigation + icons -->
   <header>
     <nav>
-      <a href="Drops.html">Drops</a>
-      <a href="Drops.html">Drops</a>
-      <a href="contacts.html">Contact</a>
+      <a href="Drops.html"><i class="fas fa-fire"></i> Drops</a>
+      <a href="about.html"><i class="fas fa-user"></i> About</a>
+      <a href="contacts.html"><i class="fas fa-envelope"></i> Contact</a>
     </nav>
   </header>
 
